@@ -1,2 +1,1 @@
-# fullstack-code-test
-EQT Fullstack code test
+# EQT Full stack code test
