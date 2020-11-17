@@ -1,24 +1,29 @@
 const express = require('express')
+const db = require('./db')
 const app = express()
-console.log('Starting server')
-
 
 app.use(function (req, res, next) {
-    const origin = req.get('origin')
-    res.header('Access-Control-Allow-Origin', origin)
-    next()
+  const origin = req.get('origin')
+  res.header('Access-Control-Allow-Origin', origin)
+  next()
 })
 
-app.get('/v1/users', function (req, res, next) {
-    const users = [
-        { first_name: "John", last_name: "Doe", email: "john.doe@eqt.com" },
-        { first_name: "Jane", last_name: "Doe", email: "jane.Doe@eqt.com" },
-    ]
-    res.status(200).json(users)
+app.get('/v1/funds', async function (req, res, next) {
+  const funds = await db.query(`SELECT * FROM fund`)
+  console.log(funds)
+  res.status(200).json(funds)
+})
+app.get('/v1/users', async function (req, res, next) {
+  const users = await db.query(`SELECT * FROM "user"`)
+  res.status(200).json(users)
+})
+app.get('/v1/fund_financials', async function (req, res, next) {
+  const fund_financials = await db.query(`SELECT * FROM fund_financial`)
+  res.status(200).json(fund_financials)
 })
 
 // Start server
 const port = 9090
 app.listen(port, () => {
-    console.log('🚀 Server is up on port', port)
+  console.log('🚀 Server is up on port', port)
 })
