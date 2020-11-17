@@ -1,4 +1,4 @@
-# EQT Full stack code test
+# EQT Fullstack code test
 
 Hello! :wave:
 
