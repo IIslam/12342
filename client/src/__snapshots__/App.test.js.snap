@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders Fetch Fund Investments button 1`] = `
+exports[`renders & tests the Fetch Fund Investments button 1`] = `
 "Snapshot Diff:
 - First value
 + Second value
