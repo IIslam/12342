@@ -29,24 +29,26 @@ export default class App extends Component {
       <div className="App">
         <h1 className="header">Fund Data Visualisation</h1>
         <button className="fetch-button" onClick={() => this.getFundData()}>FETCH DATA</button>
-        {users &&
-          <>
-            <h2>User Data</h2>
-            {users.map(u => <p>{JSON.stringify(u)}</p>)}
-          </>
-        }
-        {funds &&
-          <>
-            <h2>Fund Data</h2>
-            {funds.map(f => <p>{JSON.stringify(f)}</p>)}
-          </>
-        }
-        {financials &&
-          <>
-            <h2>Financial Data</h2>
-            {financials.map(f => <p>{JSON.stringify(f)}</p>)}
-          </>
-        }
+        <div className="fund-data-container">
+          {users &&
+            <>
+              <h2>User Data</h2>
+              {users.map(u => <p>{JSON.stringify(u)}</p>)}
+            </>
+          }
+          {funds &&
+            <>
+              <h2>Fund Data</h2>
+              {funds.map(f => <p>{JSON.stringify(f)}</p>)}
+            </>
+          }
+          {financials &&
+            <>
+              <h2>Financial Data</h2>
+              {financials.map(f => <p>{JSON.stringify(f)}</p>)}
+            </>
+          }
+        </div>
       </div>
     );
   }
