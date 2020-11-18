@@ -9,6 +9,6 @@ COPY secrets/ ./secrets
 COPY wait-for-it.sh ./wait-for-it.sh
 
 RUN npm install
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
 
 EXPOSE 9090
