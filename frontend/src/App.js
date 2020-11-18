@@ -28,7 +28,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <h1 className="header">Fund Data Visualisation</h1>
-        <button className="fetch-button" onClick={() => this.getFundData()}>Fetch Data</button>
+        <button className="fetch-button" onClick={() => this.getFundData()}>FETCH DATA</button>
         {users &&
           <>
             <h2>User Data</h2>

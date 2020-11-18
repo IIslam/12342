@@ -1,5 +1,6 @@
 .Instructions {
   text-align: center;
+  margin-top: 70px;
 }
 
 .Instructions-logo {
@@ -19,4 +20,8 @@
 
 .Instructions-link {
   color: #61dafb;
+}
+
+.challenge-container{
+  margin: 80px 0 80px 0;
 }
