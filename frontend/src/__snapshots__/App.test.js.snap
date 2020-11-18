@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders & tests the Fetch Fund Investments button 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -7,9 +7,11 @@
+      >
+        Fund Data Visualisation
+        <button>
+          Fetch Fund Investments
+        </button>
+-       <p />
++       <p>
++         [{\\"id\\":1,\\"fund\\":\\"Test Fund 1\\"},{\\"id\\":2,\\"fund\\":\\"Test Fund 2\\"}]
++       </p>
+      </header>
+    </div>
+  </DocumentFragment>"
+`;
