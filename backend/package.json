@@ -1,0 +1,23 @@
+{
+  "name": "fullstack-codetest",
+  "version": "1.0.0",
+  "description": "EQT Full stack code challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest test",
+    "test:watch": "jest --watch test",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6"
+  }
+}
