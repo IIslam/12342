@@ -13,4 +13,4 @@ Good Luck!
 ---
 - Frontend: `http://localhost:3000`
 - Backend: `http://localhost:9090`
-- Database (pg): `http:/localhost:5432`
+- Database (pg): `http://localhost:5432` (Connect with credentials found in `/db/localdb.env`)
