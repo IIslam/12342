@@ -1,12 +1,17 @@
 var dotenv = require("dotenv");
 var dotenvExpand = require("dotenv-expand");
+const morgan = require("morgan");
 
 var myEnv = dotenv.config();
 dotenvExpand(myEnv);
 
 const express = require("express");
-const db = require("./db");
 const app = express();
+
+const funds = require("./routes/funds");
+const users = require("./routes/users");
+const financialFunds = require("./routes/funds-financial");
+const dashboard = require("./routes/dashboard");
 
 app.use(function (req, res, next) {
   const origin = req.get("origin");
@@ -14,20 +19,13 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get("/v1/funds", async function (req, res, next) {
-  const funds = await db.query(`SELECT * FROM fund`);
-  res.status(200).json(funds);
-});
+app.use(morgan("dev"));
 
-app.get("/v1/users", async function (req, res, next) {
-  const users = await db.query(`SELECT * FROM "user"`);
-  res.status(200).json(users);
-});
-
-app.get("/v1/fund_financials", async function (req, res, next) {
-  const fund_financials = await db.query(`SELECT * FROM fund_financial`);
-  res.status(200).json(fund_financials);
-});
+// Routes
+app.use("/api/users", users);
+app.use("/api/funds", funds);
+app.use("/api/finaicialFunds", financialFunds);
+app.use("/api/dashboard", dashboard);
 
 // Start server
 const port = 9090;
