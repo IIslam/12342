@@ -18,10 +18,12 @@ app.get("/v1/funds", async function (req, res, next) {
   const funds = await db.query(`SELECT * FROM fund`);
   res.status(200).json(funds);
 });
+
 app.get("/v1/users", async function (req, res, next) {
   const users = await db.query(`SELECT * FROM "user"`);
   res.status(200).json(users);
 });
+
 app.get("/v1/fund_financials", async function (req, res, next) {
   const fund_financials = await db.query(`SELECT * FROM fund_financial`);
   res.status(200).json(fund_financials);
